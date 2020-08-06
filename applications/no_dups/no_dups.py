@@ -1,5 +1,16 @@
 def no_dups(s):
-    # Your code here
+    cache = {}
+    words = s.split()
+
+    for i in range(len(words)):
+        if words[i] in cache:
+            words[i] = None
+        else:
+            cache[words[i]] = True
+
+    string = ' '.join(filter(None, words))
+    return string
+
 
 
 
